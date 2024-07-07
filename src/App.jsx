@@ -12,10 +12,13 @@ const App = ()=>{
   const [items , setItems] = useState([]);
 
   const itemSubmit = ()=>{
-    setItems((prevArr)=>{
-      return [...prevArr , inputList]
-    })
-    setInputList("")
+    if (inputList.trim() !== "" ){
+      setItems((prevArr)=>{
+        return [...prevArr , inputList]
+      })
+      setInputList("")
+    }
+    
   }
 
   const deleteItems = (id)=>{
@@ -35,17 +38,18 @@ const App = ()=>{
           <br />
           <input type="text" placeholder="Add the items" onChange={itemEvent} value={inputList}/>
           <button onClick={itemSubmit}> + </button>
-
-          <ol className="list">
-            {items.map((itemValue, index)=>{
-              return <ToDoLists 
-                key = {index}
-                id = {index}
-                value = {itemValue}
-                onSubmit = {deleteItems}
-              />
-            })}
-          </ol>
+          <div className="container">
+            <ul className="list">
+              {items.map((itemValue, index)=>{
+                return <ToDoLists 
+                  key = {index}
+                  id = {index}
+                  value = {itemValue}
+                  onSubmit = {deleteItems}
+                />
+              })}
+            </ul>
+          </div>
         </div>
       </div>
     </>
