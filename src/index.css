@@ -5,18 +5,18 @@
   font-family:'Times New Roman', Times, serif;
 }
 
+body{
+  background: linear-gradient(145deg, #00539CFF 50%, #EEA47FFF 50%);
+
+}
+
 .main_div{
   width: 100%;
   height: 100vh;
-  background: linear-gradient(145deg, #00539CFF 50%, #EEA47FFF 50%);
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-}
-
-.list{
-  list-style: none;
 }
 
 .center_div{
@@ -25,6 +25,15 @@
   background-color: #f4f4f4;
   box-shadow: 5px 5px 20px -5px rgba(0, 0, 0, 0.75);
   border-radius: 15px;
+  display: inline-block;
+}
+.container{
+  overflow-y: auto; /* Enables vertical scrolling if needed */
+  overflow-x: hidden; /* Disables horizontal scrolling */
+  width: 300px;
+  height: 210px;
+  margin-top: 30px;
+  padding: 2px;
 }
 
 h1{
@@ -69,12 +78,7 @@ button:hover{
 
 }
 
-ol{
-  margin-top: 30px;
-}
-
-ol li{
-  padding-left: opx;
+ul li{
   text-align: left;
   font-size: 18px;
   min-height: 40px;
@@ -82,8 +86,8 @@ ol li{
   align-items: center;
   color: blueviolet;
   text-transform: capitalize;
-  /* border-bottom: 1px solid grey; */
   margin-left: 40px;
+  word-break:break-all;
 }
 
 .todo_style{
@@ -112,9 +116,40 @@ ol li{
   color: crimson;
 }
 
-@media(max-width:768px){
-  .center_div{
-    width: 55%;
+@media(max-width: 768px) {
+  .center_div {
+    width: 90%;
+    height: 60vh; /* Adjust height for smaller screens */
   }
 
+  input {
+    width: 80%; /* Adjust input width for smaller screens */
+  }
+
+  .todo_style .fa-times {
+    margin: 0 15px 0 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media(max-width: 480px) {
+  .center_div {
+    width: 95%;
+    height: 50vh; /* Further adjust height for very small screens */
+  }
+
+  input {
+    width: 80%; /* Adjust input width for very small screens */
+  }
+
+  ul li {
+    font-size: 16px; /* Adjust font size for better readability on small screens */
+    margin-left: 5px; /* Adjusted margin for very small screens */
+  }
+
+  button {
+    font-size: 24px; /* Adjust button font size for small screens */
+  }
 }
