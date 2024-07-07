@@ -65,6 +65,8 @@ button{
 
 button:hover{
   background-color: rgb(52, 169, 52);
+  cursor: pointer;
+
 }
 
 ol{
@@ -103,6 +105,7 @@ ol li{
 
 .todo_style .fa-times:hover{
   color: crimson;
+  cursor: pointer;
 }
 
 .todo_style .fa-times:hover .list_style{
