@@ -26,8 +26,7 @@ const ToDoLists = (props)=>{
                         <FontAwesomeIcon
                         className="fa-edit"
                         onClick={() => props.onEditStart(props.id, props.value)}
-                        icon={faEdit}
-                        />
+                        icon={faEdit} />
                         <FontAwesomeIcon
                         className="fa-times"
                         onClick={() => {
