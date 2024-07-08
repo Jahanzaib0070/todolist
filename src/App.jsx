@@ -59,10 +59,10 @@ const App = ()=>{
                   key={index}
                   id={index}
                   value={itemValue}
-                  onSubmit={deleteItems}
                   isEditing={isEditing === index}
                   editText={editText}
                   onEditChange={(e) => setEditText(e.target.value)}
+                  onSubmit={deleteItems}
                   onEditStart={startEditing}
                   onSaveEdit={saveEdit}
                 />
