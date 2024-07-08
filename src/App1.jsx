@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
+import Button from '@mui/material/Button';
+import Tooltip from '@mui/material/Tooltip';
 const App1 = () => {
     const [count, setCount] = useState(0);
     const [showModal, setShowModal] = useState(false);
@@ -23,8 +25,12 @@ const App1 = () => {
                 <div className="center_div">
                     <h1>{count}</h1>
                     <div className="buttons">
-                        <button onClick={incNum}><AddIcon /> Increment</button>
-                        <button onClick={decNum}><RemoveIcon />Decrement</button>
+                        <Tooltip title="Add">
+                            <Button variant="contained" color="success" onClick={incNum}><AddIcon /></Button>
+                        </Tooltip>
+                        <Tooltip title="Delete">
+                            <Button variant="contained" color="error" onClick={decNum}><RemoveIcon /></Button>
+                        </Tooltip>
                     </div>
                 </div>
             </div>
