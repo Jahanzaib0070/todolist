@@ -1,16 +1,15 @@
-*{
+* {
   box-sizing: border-box;
-  padding: 0%;
+  padding: 0;
   margin: 0;
-  font-family:'Times New Roman', Times, serif;
+  font-family: 'Times New Roman', Times, serif;
 }
 
-body{
+body {
   background: linear-gradient(145deg, #00539CFF 50%, #EEA47FFF 50%);
-
 }
 
-.main_div{
+.main_div {
   width: 100%;
   height: 100vh;
   display: flex;
@@ -19,7 +18,7 @@ body{
   text-align: center;
 }
 
-.center_div{
+.center_div {
   width: 25%;
   height: 70vh;
   background-color: #f4f4f4;
@@ -27,25 +26,26 @@ body{
   border-radius: 15px;
   display: inline-block;
 }
-.container{
-  overflow-y: auto; /* Enables vertical scrolling if needed */
-  overflow-x: hidden; /* Disables horizontal scrolling */
-  width: 300px;
-  height: 210px;
-  margin-top: 30px;
-  padding: 2px;
+
+.container {
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+  height:230px;
+  margin-top: 15px;
+  padding: 10px;
 }
 
-h1{
+h1 {
   background: transparent;
   color: white;
   background-color: blueviolet;
   padding: 6px 0px 2px 0px;
   margin-bottom: 10px;
-  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.5)
+  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.5);
 }
 
-input{
+input {
   text-align: center;
   height: 30px;
   width: 60%;
@@ -58,7 +58,7 @@ input{
   outline: none;
 }
 
-button{
+button {
   min-height: 30px;
   width: 35px;
   border-radius: 50%;
@@ -69,16 +69,19 @@ button{
   border: none;
   outline: none;
   margin-left: 10px;
-  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.4)
+  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.4);
 }
 
-button:hover{
+button:hover {
   background-color: rgb(52, 169, 52);
   cursor: pointer;
-
 }
 
-ul li{
+ul {
+  padding: 0;
+}
+
+ul li {
   text-align: left;
   font-size: 18px;
   min-height: 40px;
@@ -86,70 +89,66 @@ ul li{
   align-items: center;
   color: blueviolet;
   text-transform: capitalize;
-  margin-left: 40px;
-  word-break:break-all;
+  margin-left: 10px;
+  word-break: break-all;
 }
 
-.todo_style{
+.todo_style {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
 
-.todo_style .fa-times{
-  width:15px;
+.todo_style .fa-times, .fa-edit, .fa-save {
+  width: 15px;
   height: 15px;
-  display: flex;
-  justify-content: right;
-  align-items: center;
-  margin-right: 40px; 
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  margin-right: 5px;
   color: blueviolet;
 }
 
-.todo_style .fa-times:hover{
+.todo_style .fa-times:hover, .fa-edit:hover, .fa-save:hover {
   color: crimson;
   cursor: pointer;
 }
 
-.todo_style .fa-times:hover .list_style{
-  color: crimson;
-}
-
-@media(max-width: 768px) {
+@media (max-width: 768px) {
   .center_div {
     width: 90%;
-    height: 60vh; /* Adjust height for smaller screens */
+    height: 60vh;
   }
 
   input {
-    width: 80%; /* Adjust input width for smaller screens */
+    width: 80%;
   }
 
-  .todo_style .fa-times {
-    margin: 0 15px 0 15px;
+  .todo_style .fa-times, .fa-edit, .fa-save {
+    margin: 0 15px;
     display: flex;
     justify-content: center;
     align-items: center;
   }
 }
 
-@media(max-width: 480px) {
+@media (max-width: 480px) {
   .center_div {
     width: 95%;
-    height: 50vh; /* Further adjust height for very small screens */
+    height: 50vh;
   }
 
   input {
-    width: 80%; /* Adjust input width for very small screens */
+    width: 80%;
   }
 
   ul li {
-    font-size: 16px; /* Adjust font size for better readability on small screens */
-    margin-left: 5px; /* Adjusted margin for very small screens */
+    font-size: 16px;
+    margin-left: 5px;
   }
 
   button {
-    font-size: 24px; /* Adjust button font size for small screens */
+    font-size: 24px;
   }
 }
