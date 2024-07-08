@@ -3,13 +3,14 @@ import ToDoLists from "./ToDoLists";
 
 const App = ()=>{
   const[inputList, setInputList] = useState();
+  const [items , setItems] = useState([]);
+  const [isEditing, setIsEditing] = useState(null);
+  const [editText, setEditText] = useState("");
   
   const itemEvent = (event)=>{
     setInputList(event.target.value)
     
   }
-
-  const [items , setItems] = useState([]);
 
   const itemSubmit = ()=>{
     if (inputList.trim() !== "" ){
@@ -28,6 +29,19 @@ const App = ()=>{
       })
     })
   }
+
+  const startEditing = (id, currentValue) => {
+    setIsEditing(id);
+    setEditText(currentValue);
+  };
+
+  const saveEdit = (id) => {
+    setItems((oldItems) =>
+      oldItems.map((item, index) => (index === id ? editText : item))
+    );
+    setIsEditing(null);
+    setEditText("");
+  };
   
   return(
     <>
@@ -42,10 +56,15 @@ const App = ()=>{
             <ul className="list">
               {items.map((itemValue, index)=>{
                 return <ToDoLists 
-                  key = {index}
-                  id = {index}
-                  value = {itemValue}
-                  onSubmit = {deleteItems}
+                  key={index}
+                  id={index}
+                  value={itemValue}
+                  onSubmit={deleteItems}
+                  isEditing={isEditing === index}
+                  editText={editText}
+                  onEditChange={(e) => setEditText(e.target.value)}
+                  onEditStart={startEditing}
+                  onSaveEdit={saveEdit}
                 />
               })}
             </ul>
